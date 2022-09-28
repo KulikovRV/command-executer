@@ -1,6 +1,9 @@
+import { PromtService } from "./core/promt/promt.service";
+
 export class App {
-    run() {
-        console.log('START')
+    async run() {
+        const res = await (new PromtService()).input<number>('Int', 'number');
+        console.log(res);
     }
 }
 
