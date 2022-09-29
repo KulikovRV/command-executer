@@ -1,9 +1,9 @@
-import { PromtService } from "./core/promt/promt.service";
+import { FfmpegExecutor } from "./commands/ffmpeg.executor";
+import { ConsoleLogger } from "./out/console-logger/console-logger";
 
 export class App {
     async run() {
-        const res = await (new PromtService()).input<number>('Int', 'number');
-        console.log(res);
+        await new FfmpegExecutor(ConsoleLogger.getInstance()).execute();
     }
 }
 
